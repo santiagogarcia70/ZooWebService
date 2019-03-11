@@ -13,19 +13,20 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 /**
- * Configuration of Animal Rating persistence By: Jhosep García
- */
+ * Configuracion de la persistencia AnimalRating
+ * @Author Jhosep García
+ */ 
 @Stateless
 public class AnimalRatingPersistence {
 
     /*
-	*Driver from the entity
+	*Manejador de la Entidad
      */
     @PersistenceContext(unitName = "zoowebservicePU")
     protected EntityManager em;
 
     /*    
-    Search entity
+    Busqueda en la entidad
      */
     public List<AnimalRatingEntity> findAll() {
         Query todos = em.createQuery("select P from AppointmentEntity P ");
@@ -33,14 +34,14 @@ public class AnimalRatingPersistence {
     }
 
     /*
-    Find By ID
+    Busqueda por ID
      */
     public AnimalRatingEntity findId(Long id) {
         return em.find(AnimalRatingEntity.class, id);
     }
 
     /*
-    insertion of records
+    Inserción de registros
 
      */
     public AnimalRatingEntity insertRegistry(AnimalRatingEntity entity) {
@@ -49,14 +50,14 @@ public class AnimalRatingPersistence {
     }
 
     /*
-    Update of an entity's data
+    Actualización de datos de la entidad
      */
     public AnimalRatingEntity updateRegistry(AnimalRatingEntity entity) {
         return em.merge(entity);
     }
 
     /*   
-     Removal of data from an entity
+     Remover datos de la entidad
      */
     public void deleteRegistry(Long id) {
 

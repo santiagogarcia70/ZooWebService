@@ -14,18 +14,19 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 /**
- * Configuration of Identification type persistence By: Jhosep García
+ * Configuracion de la persistencia IdentificationType
+ * @Author Jhosep García
  */
 @Stateless
 public class IdentificationTypePersistence {
    /*
-	*Driver from the entity
+	*Manejador de la Entidad
      */
     @PersistenceContext(unitName = "zoowebservicePU")
     protected EntityManager em;
 
     /*    
-    Search entity
+    Busqueda en la entidad
      */
     public List<IdentificationTypeEntity> findAll() {
         Query todos = em.createQuery("select P from AppointmentEntity P ");
@@ -33,15 +34,14 @@ public class IdentificationTypePersistence {
     }
 
     /*
-    Find By ID
+    Busqueda por ID
      */
     public IdentificationTypeEntity findId(Long id) {
         return em.find(IdentificationTypeEntity.class, id);
     }
 
     /*
-    insertion of records
-
+    Inserción de registros
      */
     public IdentificationTypeEntity insertRegistry(IdentificationTypeEntity entity) {
         em.persist(entity);
@@ -49,14 +49,14 @@ public class IdentificationTypePersistence {
     }
 
     /*
-    Update of an entity's data
-     */
+    Actualización de datos de la entidad
+    */
     public IdentificationTypeEntity updateRegistry(IdentificationTypeEntity entity) {
         return em.merge(entity);
     }
 
     /*   
-     Removal of data from an entity
+     Remover datos de la entidad
      */
     public void deleteRegistry(Long id) {
 

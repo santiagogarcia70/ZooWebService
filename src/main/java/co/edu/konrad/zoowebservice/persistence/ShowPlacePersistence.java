@@ -14,19 +14,20 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 /**
- * Configuration of show place persistence By: Jhosep García
+ *Configuracion de la persistencia ShowPlace
+ * @Author Jhosep García
  */
 @Stateless
 public class ShowPlacePersistence {
 
     /*
-	*Driver from the entity
+	*Manejador de la Entidad
      */
     @PersistenceContext(unitName = "zoowebservicePU")
     protected EntityManager em;
 
     /*    
-    Search entity
+    Busqueda en la entidad
      */
     public List<ShowPlaceEntity> findAll() {
         Query todos = em.createQuery("select P from AppointmentEntity P ");
@@ -34,15 +35,14 @@ public class ShowPlacePersistence {
     }
 
     /*
-    Find By ID
+    Busqueda por ID
      */
     public ShowPlaceEntity findId(Long id) {
         return em.find(ShowPlaceEntity.class, id);
     }
 
     /*
-    insertion of records
-
+   Inserción de registros
      */
     public ShowPlaceEntity insertRegistry(ShowPlaceEntity entity) {
         em.persist(entity);
@@ -50,14 +50,14 @@ public class ShowPlacePersistence {
     }
 
     /*
-    Update of an entity's data
+    Actualización de datos de la entidad
      */
     public ShowPlaceEntity updateRegistry(ShowPlaceEntity entity) {
         return em.merge(entity);
     }
 
     /*   
-     Removal of data from an entity
+     Remover datos de la entidad
      */
     public void deleteRegistry(Long id) {
 

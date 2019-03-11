@@ -13,19 +13,20 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 /**
- * Configuration of Appointment persistence By: Jhosep García
+ * Configuracion de la persistencia Appointment
+ * @Author Jhosep García
  */
 @Stateless
 public class AppointmentPersistence {
 
     /*
-	*Driver from the entity
+	*Manejador de la Entidad
      */
     @PersistenceContext(unitName = "zoowebservicePU")
     protected EntityManager em;
 
     /*    
-    Search entity
+    *Busqueda en la entidad
      */
     public List<AppointmentEntity> findAll() {
         Query todos = em.createQuery("select P from AppointmentEntity P ");
@@ -33,15 +34,14 @@ public class AppointmentPersistence {
     }
 
     /*
-    Find By ID
+    Busqueda por ID
      */
     public AppointmentEntity findId(Long id) {
         return em.find(AppointmentEntity.class, id);
     }
 
     /*
-    insertion of records
-
+    Inserción de registros
      */
     public AppointmentEntity insertRegistry(AppointmentEntity entity) {
         em.persist(entity);
@@ -49,14 +49,14 @@ public class AppointmentPersistence {
     }
 
     /*
-    Update of an entity's data
+    Actualización de datos de la entidad
      */
     public AppointmentEntity updateRegistry(AppointmentEntity entity) {
         return em.merge(entity);
     }
 
     /*   
-     Removal of data from an entity
+     Remover datos de la entidad
      */
     public void deleteRegistry(Long id) {
 

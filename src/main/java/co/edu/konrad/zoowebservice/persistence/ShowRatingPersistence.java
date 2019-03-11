@@ -14,19 +14,20 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 /**
- * Configuration of Show Rating persistence By: Jhosep García
+ * Configuracion de la persistencia ShowRating
+ * @Author Jhosep García
  */
 @Stateless
 public class ShowRatingPersistence {
 
     /*
-	*Driver from the entity
+	*Manejador de la Entidad
      */
     @PersistenceContext(unitName = "zoowebservicePU")
     protected EntityManager em;
 
     /*    
-    Search entity
+    Busqueda en la entidad
      */
     public List<ShowRatingEntity> findAll() {
         Query todos = em.createQuery("select P from AppointmentEntity P ");
@@ -34,14 +35,14 @@ public class ShowRatingPersistence {
     }
 
     /*
-    Find By ID
+    Busqueda por ID
      */
     public ShowRatingEntity findId(Long id) {
         return em.find(ShowRatingEntity.class, id);
     }
 
     /*
-    insertion of records
+    Inserción de registros
 
      */
     public ShowRatingEntity insertRegistry(ShowRatingEntity entity) {
@@ -50,14 +51,14 @@ public class ShowRatingPersistence {
     }
 
     /*
-    Update of an entity's data
+    Actualización de datos de la entidad
      */
     public ShowRatingEntity updateRegistry(ShowRatingEntity entity) {
         return em.merge(entity);
     }
 
     /*   
-     Removal of data from an entity
+     Remover datos de la entidad
      */
     public void deleteRegistry(Long id) {
 
