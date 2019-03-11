@@ -64,7 +64,7 @@ public class AnimalDTO implements Serializable {
         this.scientificNameAnimal = animalEntity.getScientificNameAnimal();
         this.ageAnimal = animalEntity.getAgeAnimal();
         this.descriptionAnimal = animalEntity.getDescriptionAnimal();
-        this.specieAnimal = animalEntity.getScientificNameAnimal();
+        this.specieAnimal = animalEntity.getSpecieAnimal();
         this.caretaker = animalEntity.getCaretaker();
         this.lunchTimeAnimal = animalEntity.getLunchTimeAnimal();
         this.animalShowList = animalEntity.getAnimalShowList();

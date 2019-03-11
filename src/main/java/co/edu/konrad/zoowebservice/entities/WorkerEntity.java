@@ -67,7 +67,7 @@ public class WorkerEntity implements Serializable{
      */
     @ManyToOne
     @JoinColumn (name = "appointment")
-    private Appointment appointmentWorker;
+    private AppointmentEntity appointmentWorker;
 
     public WorkerEntity() {
     }
@@ -128,11 +128,11 @@ public class WorkerEntity implements Serializable{
         this.birthDayWorker = birthDayWorker;
     }
     
-    public Appointment getAppointmentWorker() {
+    public AppointmentEntity getAppointmentWorker() {
         return appointmentWorker;
     }
 
-    public void setAppointmentWorker(Appointment appointmentWorker) {
+    public void setAppointmentWorker(AppointmentEntity appointmentWorker) {
         this.appointmentWorker = appointmentWorker;
     }
 }

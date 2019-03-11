@@ -6,7 +6,7 @@
 package co.edu.konrad.zoowebservice.DTO;
 
 import co.edu.konrad.zoowebservice.entities.AnimalEntity;
-import co.edu.konrad.zoowebservice.entities.Appointment;
+import co.edu.konrad.zoowebservice.entities.AppointmentEntity;
 import co.edu.konrad.zoowebservice.entities.ShowEntity;
 import co.edu.konrad.zoowebservice.entities.IdentificationTypeEntity;
 import co.edu.konrad.zoowebservice.entities.WorkerEntity;
@@ -50,7 +50,7 @@ public class WorkerDTO implements Serializable {
     /**
      * Atributo cargo del trabajador
      */
-    private Appointment appointmentWorker;
+    private AppointmentEntity appointmentWorker;
 
     public WorkerDTO(WorkerEntity workerEntity) {
         this.idWorker = workerEntity.getIdWorker();
@@ -124,11 +124,11 @@ public class WorkerDTO implements Serializable {
         this.phoneWorker = phoneWorker;
     }
 
-    public Appointment getAppointmentWorker() {
+    public AppointmentEntity getAppointmentWorker() {
         return appointmentWorker;
     }
 
-    public void setAppointmentWorker(Appointment appointmentWorker) {
+    public void setAppointmentWorker(AppointmentEntity appointmentWorker) {
         this.appointmentWorker = appointmentWorker;
     }
 }
