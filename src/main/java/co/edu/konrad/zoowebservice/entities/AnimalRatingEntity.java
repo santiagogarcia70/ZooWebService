@@ -11,6 +11,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 /**
  * Configuration of entity Animal Rating By: Jhosep García
@@ -28,9 +30,9 @@ public class AnimalRatingEntity implements Serializable {
     /*
      *Foreign Key id_animal
      */
-    @Column(name = "id_animal", nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "id_animal")
     private long idAnimal;
-
     /*
     *Atribbut user_name 
      */
