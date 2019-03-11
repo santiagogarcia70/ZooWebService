@@ -9,6 +9,9 @@ package co.edu.konrad.zoowebservice.entities;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 /**
  *
@@ -20,13 +23,15 @@ public class DietEntity implements Serializable{
     /**
      * Llave foranea de especie
      */
+    @Id
     @Column(name = "id_specie")
     private long idSpecie;
     
     /**
      * Llave foranea de comida
      */
-    @Column(name = "id_food")
+    @ManyToOne
+    @JoinColumn(name = "id_food")
     private long idFood;
     
     /**

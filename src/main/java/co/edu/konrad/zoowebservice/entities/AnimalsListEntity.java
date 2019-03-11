@@ -10,6 +10,9 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 /**
  *
@@ -22,14 +25,16 @@ public class AnimalsListEntity implements Serializable{
      * Llave primaria/foranea
      */
     @Id
-    @Column(name = "id_zoo")
+    @OneToOne
+    @JoinColumn(name = "id_zoo")
     private long idZoo;
 
     /**
      * Llave primaria/foranea
      */
     @Id
-    @Column(name = "id_animal")
+    @OneToOne
+    @JoinColumn(name = "id_animal")
     private long idAnimal;
     
     /**
