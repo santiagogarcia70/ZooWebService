@@ -1,14 +1,20 @@
-## ¿Qué se trabajó?:
+## <p align="center">¿Qué se trabajó?:</p>
 
-#Ejemplo: Se trabajó en el componente <Header /> haciendo...
+|Archivos Trabajados|Rutas|¿Qué se hizo?|
+|:---:|:---:|:---:|
+|**Nombre del archivo 1**|_`src/example-route`_|Lo que se hizo|
+|**Nombre del archivo 2**|_`src/example-route`_|Lo que se hizo|
 
-## ¿Cómo se trabajó:
+---
 
-<!--
-Algo que describa de forma precisa cómo se implementó o trabajó para que la revisión sea más rápida
--->
+## <p align="center"> ¿Cómo se trabajó: </p>
+<p align="center">
+<!-- Algo que describa de forma precisa cómo se implementó o trabajó para que la revisión sea más rápida -->
+</p>
 
-## ¿Cómo QA puede verificar esto?:
+---
+
+## <p align="center">¿Cómo QA puede verificar esto?:</p>
 
 <!--
 Agregue pantallazos si es Frontend o App, comandos si es Backend, instrucciones o cualquier cosa
@@ -19,5 +25,5 @@ Ejemplos:
 * Pantallazos mostrando diferencias o demás mostrando el resultado
 * Describir la URL para verificar el trabajo
 -->
-
-***¿Está listo para revisión?:*** NO
+---
+<p align="center">¿Está listo para revisión?: No</p>
