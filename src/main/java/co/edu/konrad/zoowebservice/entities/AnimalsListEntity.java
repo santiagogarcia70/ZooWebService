@@ -5,10 +5,63 @@
  */
 package co.edu.konrad.zoowebservice.entities;
 
+
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 /**
  *
  * @author valeria
  */
-public class AnimalsListEntity {
+@Entity
+public class AnimalsListEntity implements Serializable{
+    
+    /**
+     * Llave primaria/foranea
+     */
+    @Id
+    @Column(name = "id_zoo")
+    private long idZoo;
+
+    /**
+     * Llave primaria/foranea
+     */
+    @Id
+    @Column(name = "id_animal")
+    private long idAnimal;
+    
+    /**
+     * Atributo locacion
+     */
+    @Column(name = "locatioon")
+    private String location;
+
+
+    public long getIdZoo() {
+        return idZoo;
+    }
+
+    public void setIdZoo(long idZoo) {
+        this.idZoo = idZoo;
+    }
+
+    public long getIdAnimal() {
+        return idAnimal;
+    }
+
+    public void setIdAnimal(long idAnimal) {
+        this.idAnimal = idAnimal;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
     
 }
+

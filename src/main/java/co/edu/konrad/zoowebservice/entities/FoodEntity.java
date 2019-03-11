@@ -5,6 +5,7 @@
  */
 package co.edu.konrad.zoowebservice.entities;
 
+
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,41 +18,34 @@ import javax.persistence.Id;
  * @author valeria
  */
 @Entity
-public class ZooEntity implements Serializable{
-    
+public class FoodEntity implements Serializable{
     /**
-     * Llave primaria
+     * llave primaria
      */
-    @Id
+        @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id_zoo")
-    private long idZoo;
+    @Column(name = "id_food")
+    private long idFood;
     
     /**
-     * Atributo nombre
+     * Atributo  nombre
      */
     @Column(name = "name")
     private String name;
-
+    
     /**
-     * Atributo unico de telefono
+     * Atributo descripcion
      */
-    @Column(name = "phone", unique = true)
-    private long phone;
-
-    /**
-     * Atributo unico de direccion
-     */
-    @Column(name = "address", unique = true)
-    private String address;
+    @Column(name = "description")
+    private String description;
 
 
-    public long getIdZoo() {
-        return idZoo;
+    public long getIdFood() {
+        return idFood;
     }
 
-    public void setIdZoo(long idZoo) {
-        this.idZoo = idZoo;
+    public void setIdFood(long idFood) {
+        this.idFood = idFood;
     }
 
     public String getName() {
@@ -62,20 +56,14 @@ public class ZooEntity implements Serializable{
         this.name = name;
     }
 
-    public long getPhone() {
-        return phone;
+    public String getDescription() {
+        return description;
     }
 
-    public void setPhone(long phone) {
-        this.phone = phone;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public void setPhone(String address) {
-        this.address = address;
-    }
     
 }
+
