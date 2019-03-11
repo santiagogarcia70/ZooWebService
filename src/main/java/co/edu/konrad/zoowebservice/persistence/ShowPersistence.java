@@ -33,7 +33,7 @@ public class ShowPersistence {
     /**
      * Metodo que permite traer un objeto de la tabla show
      * @param id
-     * @return ProductEntity
+     * @return ShowEntity
      */
     public ShowEntity findById(long id){
         return em.find(ShowEntity.class, id);
@@ -56,7 +56,7 @@ public class ShowPersistence {
         return em.merge(entity);
     }
     /**
-     * Metodo que elimina un registro
+     * Metodo que elimina un registro de la tabla show
      * @param id 
      * @return ShowEntity
      */

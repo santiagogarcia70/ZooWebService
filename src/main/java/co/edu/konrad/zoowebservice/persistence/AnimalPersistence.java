@@ -34,7 +34,7 @@ public class AnimalPersistence {
     /**
      * Metodo que permite traer un objeto de la tabla animal
      * @param id
-     * @return ProductEntity
+     * @return AnimalEntity
      */
     public AnimalEntity findById(long id){
         return em.find(AnimalEntity.class, id);
@@ -57,7 +57,7 @@ public class AnimalPersistence {
         return em.merge(entity);
     }
     /**
-     * Metodo que elimina un registro
+     * Metodo que elimina un registro de la tabla animal
      * @param id
      * @return AnimalEntity
      */
