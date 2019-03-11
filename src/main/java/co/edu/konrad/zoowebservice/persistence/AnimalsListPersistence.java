@@ -5,8 +5,7 @@
  */
 package co.edu.konrad.zoowebservice.persistence;
 
-
-import co.edu.konrad.zoowebservice.entities.ZooEntity;
+import co.edu.konrad.zoowebservice.entities.AnimalsListEntity;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -19,7 +18,7 @@ import javax.persistence.Query;
  */
 
 @Stateless
-public class ZooPersistence {
+public class AnimalsListPersistence {
     
     /**
      *  Manejador
@@ -30,44 +29,44 @@ public class ZooPersistence {
     /**
      *  Metodo que permite traer todos los elementos de la tabla
      */
-    public List<ZooEntity> findAll(){
-        Query all  = em.createQuery("select p from ZooEntity p");
+    public List<AnimalsListEntity> findAll(){
+        Query all  = em.createQuery("select p from AnimalsListEntity p");
         return all.getResultList();
     }
     
     /**
-     *  Metodo que permite encontrar un elemento por id de la tabla Zoo
+     *  Metodo que permite encontrar un elemento por id de la tabla AnimalsList
      */
-    public ZooEntity findById(long id){
-        return em.find(ZooEntity.class, id);
+    public AnimalsListEntity findById(long id){
+        return em.find(AnimalsListEntity.class, id);
     }
     
     /**
-     *  Metodo que Inserta datos a la tabla Zoo 
+     *  Metodo que Inserta datos a la tabla AnimalsList 
      * @param entity
-     * @return ZooEntity
+     * @return AnimalsListEntity
      */
-    public ZooEntity insert(ZooEntity entity){
+    public AnimalsListEntity insert(AnimalsListEntity entity){
         em.persist(entity);
         return entity;
     }
     
     /**
-     *  Metodo que actualiza los datos de un objeto de Zoo
+     *  Metodo que actualiza los datos de un objeto de AnimalsList
      * @param entity
-     * @return ZooEntity actualizado
+     * @return AnimalsListEntity actualizado
      */
-    public ZooEntity update(ZooEntity entity){
+    public AnimalsListEntity update(AnimalsListEntity entity){
         return em.merge(entity);
     }
     
     /**
-     *  Metodo que elimina un registro de Zoo
+     *  Metodo que elimina un registro de AnimalsList
      * @param id
      */
     public void delete(long id){
-        ZooEntity zooDelete = em.find(ZooEntity.class, id);
-        em.remove(zooDelete);
+        AnimalsListEntity animalListDelete = em.find(AnimalsListEntity.class, id);
+        em.remove(animalListDelete);
     }
 }
 
