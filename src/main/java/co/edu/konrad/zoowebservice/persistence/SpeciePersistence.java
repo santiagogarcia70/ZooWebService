@@ -5,8 +5,7 @@
  */
 package co.edu.konrad.zoowebservice.persistence;
 
-
-import co.edu.konrad.zoowebservice.entities.DietEntity;
+import co.edu.konrad.zoowebservice.entities.SpecieEntity;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -14,12 +13,12 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 /**
- * Manejador de la tabla Diet
+ * Manejador de la tabla Specie
  * @author Valeria R.
  */
 
 @Stateless
-public class DietPersistence {
+public class SpeciePersistence {
     
     /**
      *  Manejador
@@ -30,44 +29,44 @@ public class DietPersistence {
     /**
      *  Metodo que permite traer todos los elementos de la tabla
      */
-    public List<DietEntity> findAll(){
-        Query all  = em.createQuery("select p from DietEntity p");
+    public List<SpecieEntity> findAll(){
+        Query all  = em.createQuery("select p from SpecieEntity p");
         return all.getResultList();
     }
     
     /**
-     *  Metodo que permite encontrar un elemento por id de la tabla Diet
+     *  Metodo que permite encontrar un elemento por id de la tabla Specie
      */
-    public DietEntity findById(long id){
-        return em.find(DietEntity.class, id);
+    public SpecieEntity findById(long id){
+        return em.find(SpecieEntity.class, id);
     }
     
     /**
-     *  Metodo que Inserta datos a la tabla diet 
+     *  Metodo que Inserta datos a la tabla specie 
      * @param entity
-     * @return DietEntity
+     * @return SpecieEntity
      */
-    public DietEntity insert(DietEntity entity){
+    public SpecieEntity insert(SpecieEntity entity){
         em.persist(entity);
         return entity;
     }
     
     /**
-     *  Metodo que actualiza los datos de un objeto de diet
+     *  Metodo que actualiza los datos de un objeto de specie
      * @param entity
-     * @return DietEntity actualizado
+     * @return SpecieEntity actualizado
      */
-    public DietEntity update(DietEntity entity){
+    public SpecieEntity update(SpecieEntity entity){
         return em.merge(entity);
     }
     
     /**
-     *  Metodo que elimina un registro de diet
+     *  Metodo que elimina un registro de specie
      * @param id
      */
     public void delete(long id){
-        DietEntity dietDelete = em.find(DietEntity.class, id);
-        em.remove(dietDelete);
+        SpecieEntity specieDelete = em.find(SpecieEntity.class, id);
+        em.remove(specieDelete);
     }
 }
 

@@ -66,8 +66,8 @@ public class FoodPersistence {
      * @param id
      */
     public void delete(long id){
-        FoodEntity animalListDelete = em.find(FoodEntity.class, id);
-        em.remove(animalListDelete);
+        FoodEntity foodDelete = em.find(FoodEntity.class, id);
+        em.remove(foodDelete);
     }
 }
 
