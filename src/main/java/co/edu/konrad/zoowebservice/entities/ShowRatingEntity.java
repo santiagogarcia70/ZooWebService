@@ -11,6 +11,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 /**
  * Configuration of entity Show Rating By: Jhosep García
@@ -28,7 +30,8 @@ public class ShowRatingEntity implements Serializable {
     /*
      *Foreign Key id_show
      */
-    @Column(name = "id_show", nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "id_show")
     private long idShow;
 
     /*
