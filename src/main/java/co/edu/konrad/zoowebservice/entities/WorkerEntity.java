@@ -6,6 +6,7 @@
 package co.edu.konrad.zoowebservice.entities;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,6 +14,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  *
@@ -25,22 +28,22 @@ public class WorkerEntity implements Serializable{
      */
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
-    @Column (name = "id_worker")
+    @Column (name = "id")
     private long idWorker;
     /**
      * Atributo nombre del trabajador
      */
-    @Column (name = "firstname_worker")
+    @Column (name = "firstname")
     private String firstName;
     /**
      * Atributo apellido del trabajador
      */
-    @Column (name = "lastname_worker")
+    @Column (name = "lastname")
     private String lastName;
     /**
      * Atributo documento de identificacion del trabajador
      */
-    @Column (name = "infentification_worker")
+    @Column (name = "infentification", unique = true)
     private String identificationWorker;
     /**
      * Atributo tipo de documento de identificacion del trabajador
@@ -51,8 +54,14 @@ public class WorkerEntity implements Serializable{
     /**
      * Atributo telefono del trabajador
      */
-    @Column (name = "phone_worker")
+    @Column (name = "phone", unique = true)
     private long phoneWorker;
+    /**
+     * Atributo fecha de nacimiento
+     */
+    @Temporal (TemporalType.DATE)
+    @Column (name = "birthday")
+    private Date birthDayWorker;
     /**
      * Atributo cargo del trabajador
      */
@@ -111,6 +120,14 @@ public class WorkerEntity implements Serializable{
         this.phoneWorker = phoneWorker;
     }
 
+    public Date getBirthDayWorker() {
+        return birthDayWorker;
+    }
+
+    public void setBirthDayWorker(Date birthDayWorker) {
+        this.birthDayWorker = birthDayWorker;
+    }
+    
     public Appointment getAppointmentWorker() {
         return appointmentWorker;
     }

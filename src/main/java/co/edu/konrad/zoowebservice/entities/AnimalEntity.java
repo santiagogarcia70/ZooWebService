@@ -30,45 +30,45 @@ public class AnimalEntity implements Serializable {
      */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id_animal")
+    @Column(name = "id")
     private long idAnimal;
     /**
      * Atributo nombre del animal
      */
-    @Column(name = "name_animal")
+    @Column(name = "name")
     private String nameAnimal;
     /**
      * Atributo nombre cientifico del animal
      */
-    @Column(name = "scientific_name_animal")
+    @Column(name = "scientific_name")
     private String scientificNameAnimal;
     /**
      * Atributo edad del animal
      */
-    @Column (name = "age_animal")
+    @Column(name = "age")
     private int ageAnimal;
     /**
      * Atributo description del animal
      */
-    @Column (name = "description_animal")
+    @Column(name = "description")
     private String descriptionAnimal;
     /**
      * Atributo especie del animal del animal
      */
     @ManyToOne
-    @JoinColumn (name = "id_specie")
+    @JoinColumn(name = "id_specie")
     private SpecieEntity specieAnimal;
     /**
      * Atributo cuidador del animal
      */
     @ManyToOne
-    @JoinColumn (name = "id_caretacker")
-    private WorkerEntity caretackerAnimal;
+    @JoinColumn(name = "id_caretaker")
+    private WorkerEntity caretaker;
     /**
      * Atributo hora de almuerzo del animal
      */
-    @Temporal (TemporalType.TIME)
-    @Column (name = "lunchtime_animal")
+    @Temporal(TemporalType.TIME)
+    @Column(name = "lunchtime")
     private String lunchTimeAnimal;
     /**
      * Atributo lista de animales
@@ -76,6 +76,7 @@ public class AnimalEntity implements Serializable {
     @ManyToMany
     @JoinColumn(name = "animalshow_list")
     private List<ShowEntity> animalShowList;
+
     public AnimalEntity() {
     }
 
@@ -127,12 +128,12 @@ public class AnimalEntity implements Serializable {
         this.specieAnimal = specieAnimal;
     }
 
-    public WorkerEntity getCaretackerAnimal() {
-        return caretackerAnimal;
+    public WorkerEntity getCaretaker() {
+        return caretaker;
     }
 
-    public void setCaretackerAnimal(WorkerEntity caretackerAnimal) {
-        this.caretackerAnimal = caretackerAnimal;
+    public void setCaretaker(WorkerEntity caretaker) {
+        this.caretaker = caretaker;
     }
 
     public String getLunchTimeAnimal() {
@@ -150,5 +151,5 @@ public class AnimalEntity implements Serializable {
     public void setAnimalShowList(List<ShowEntity> animalShowList) {
         this.animalShowList = animalShowList;
     }
-    
+
 }

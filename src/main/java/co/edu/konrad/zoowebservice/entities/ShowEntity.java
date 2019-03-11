@@ -30,7 +30,7 @@ public class ShowEntity implements Serializable{
      */
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
-    @Column (name = "id_show")
+    @Column (name = "id")
     private long idShow;
     /**
      * Atributo fecha y hora del show
@@ -52,19 +52,19 @@ public class ShowEntity implements Serializable{
     /**
      * Atributo nombre del show
      */
-    @Column (name = "name_show")
+    @Column (name = "name")
     private String nameShow;
     /**
      * Atributo length del show
      */
-    @Column (name = "length_show")
+    @Column (name = "length")
     private int lengthShow;
     /**
      * Atributo lista de animales del show
      */
     @ManyToMany
     @JoinColumn (name = "animalshow_list")
-    private List<AnimalEntity> animalList;
+    private List<AnimalEntity> animalShowList;
     
     public ShowEntity() {
     }
@@ -117,12 +117,12 @@ public class ShowEntity implements Serializable{
         this.lengthShow = lengthShow;
     }
 
-    public List<AnimalEntity> getAnimalList() {
-        return animalList;
+    public List<AnimalEntity> getAnimalShowList() {
+        return animalShowList;
     }
 
-    public void setAnimalList(List<AnimalEntity> animalList) {
-        this.animalList = animalList;
+    public void setAnimalShowList(List<AnimalEntity> animalShowList) {
+        this.animalShowList = animalShowList;
     }
     
 }
