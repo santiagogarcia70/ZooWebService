@@ -25,7 +25,7 @@ public class AnimalPersistence {
     
     /**
      * Metodo que retorna todos los elementos de la tabla animal
-     * @return 
+     * @return List<AnimalEntity>
      */
     public List<AnimalEntity> findAll(){
         Query all = em.createQuery("select p from AnimalEntity p");
@@ -42,7 +42,7 @@ public class AnimalPersistence {
     /**
      * Metodo que permite insertar un objeto a la tabla animal
      * @param entity
-     * @return 
+     * @return AnimalEntity
      */
     public AnimalEntity insert(AnimalEntity entity){
         em.persist(entity);
@@ -51,16 +51,19 @@ public class AnimalPersistence {
     /**
      * Metodo que actualiza informacion en la tabla animal
      * @param entity
-     * @return 
+     * @return AnimalEntity
      */
     public AnimalEntity update(AnimalEntity entity){
         return em.merge(entity);
     }
     /**
      * Metodo que elimina un registro
-     * @param id 
+     * @param id
+     * @return AnimalEntity
      */
-    public void delete(long id){
+    public AnimalEntity delete(long id){
         AnimalEntity temp = em.find(AnimalEntity.class, id);
+        em.remove(temp);
+        return temp;
     }
 }
