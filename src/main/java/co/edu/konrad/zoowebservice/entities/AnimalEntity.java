@@ -55,17 +55,84 @@ public class AnimalEntity implements Serializable {
      */
     @ManyToOne
     @JoinColumn (name = "id_specie")
-    private Specie specieAnimal;
+    private SpecieEntity specieAnimal;
     /**
      * Atributo cuidador del animal
      */
     @ManyToOne
     @JoinColumn (name = "id_caretacker")
-    private Worker caretackerAnimal;
+    private WorkerEntity caretackerAnimal;
     /**
      * Atributo hora de almuerzo del animal
      */
     @Temporal (TemporalType.TIME)
     @Column (name = "lunchtime_animal")
     private String lunchTimeAnimal;
+
+    public AnimalEntity() {
+    }
+
+    public long getIdAnimal() {
+        return idAnimal;
+    }
+
+    public void setIdAnimal(long idAnimal) {
+        this.idAnimal = idAnimal;
+    }
+
+    public String getNameAnimal() {
+        return nameAnimal;
+    }
+
+    public void setNameAnimal(String nameAnimal) {
+        this.nameAnimal = nameAnimal;
+    }
+
+    public String getScientificNameAnimal() {
+        return scientificNameAnimal;
+    }
+
+    public void setScientificNameAnimal(String scientificNameAnimal) {
+        this.scientificNameAnimal = scientificNameAnimal;
+    }
+
+    public int getAgeAnimal() {
+        return ageAnimal;
+    }
+
+    public void setAgeAnimal(int ageAnimal) {
+        this.ageAnimal = ageAnimal;
+    }
+
+    public String getDescriptionAnimal() {
+        return descriptionAnimal;
+    }
+
+    public void setDescriptionAnimal(String descriptionAnimal) {
+        this.descriptionAnimal = descriptionAnimal;
+    }
+
+    public SpecieEntity getSpecieAnimal() {
+        return specieAnimal;
+    }
+
+    public void setSpecieAnimal(SpecieEntity specieAnimal) {
+        this.specieAnimal = specieAnimal;
+    }
+
+    public WorkerEntity getCaretackerAnimal() {
+        return caretackerAnimal;
+    }
+
+    public void setCaretackerAnimal(WorkerEntity caretackerAnimal) {
+        this.caretackerAnimal = caretackerAnimal;
+    }
+
+    public String getLunchTimeAnimal() {
+        return lunchTimeAnimal;
+    }
+
+    public void setLunchTimeAnimal(String lunchTimeAnimal) {
+        this.lunchTimeAnimal = lunchTimeAnimal;
+    }
 }
