@@ -13,20 +13,21 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
- * Configuration of entity IdentificationType By: Jhosep García
+ *Configuracion de la entidad IdentificationType
+ * @Author Jhosep García
  */
 @Entity
 public class IdentificationTypeEntity implements Serializable {
 
     /*
-    *Primary Key "id"
+    *Llave primaria "id"
      */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private long id;
     /*
-    *Attribute name 
+    *Atributo name 
      */
     @Column(name = "name")
     private String name;

@@ -15,31 +15,32 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 /**
- * Configuration of entity Animal Rating By: Jhosep García
+ * Configuracion de la entidad Animal Rating
+ * @Author Jhosep García
  */
 @Entity
 public class AnimalRatingEntity implements Serializable {
 
     /*
-    *Primary Key id
+    *Llave primaria id
      */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private long id;
     /*
-     *Foreign Key id_animal
+     *Llave Foranea id_animal
      */
     @ManyToOne
     @JoinColumn(name = "id_animal")
     private long idAnimal;
     /*
-    *Atribbut user_name 
+    *Atributo user_name 
      */
     @Column(name = "user_name", unique = true)
     private String userName;
     /*
-    *Atribbut value 
+    *Atributo value 
      */
     @Column(name = "value_animalr")
     private long valueAnimalR;

@@ -15,32 +15,33 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 /**
- * Configuration of entity Show Rating By: Jhosep García
+ *Configuracion de la entidad Show Rating
+ *@Author Jhosep García
  */
 @Entity
 public class ShowRatingEntity implements Serializable {
 
     /*
-    *Primary Key id
+    *Llave primaria id
      */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private long id;
     /*
-     *Foreign Key id_show
+     *Llave Foranea id_show
      */
     @ManyToOne
     @JoinColumn(name = "id_show")
     private long idShow;
 
     /*
-    *Atribbut user_name 
+    *Atributo user_name 
      */
     @Column(name = "user_name", unique = true)
     private String userName;
     /*
-    *Atribbut value 
+    *Atributo value 
      */
     @Column(name = "value_showr")
     private long valueShowR;
