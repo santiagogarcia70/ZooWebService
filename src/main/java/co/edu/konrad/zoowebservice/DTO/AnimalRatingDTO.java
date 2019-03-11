@@ -14,19 +14,19 @@ import co.edu.konrad.zoowebservice.entities.AnimalRatingEntity;
 public class AnimalRatingDTO {
 
     /*
-    *Primary Key id
+    *Llave primaria id
      */
     private long id;
     /*
-     *Foreign Key id_animal
+     *Llave Foranea id_animal
      */
     private long idAnimal;
     /*
-    *Atribbut user_name 
+    *Atributo user_name 
      */
     private String userName;
     /*
-    *Atribbut value 
+    *Atributo value 
      */
     private long valueAnimalR;
 

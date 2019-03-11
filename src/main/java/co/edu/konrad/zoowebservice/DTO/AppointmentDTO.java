@@ -14,11 +14,11 @@ import co.edu.konrad.zoowebservice.entities.AppointmentEntity;
 public class AppointmentDTO {
 
     /*
-    *Primary Key "id"
+    *Llave primaria "id"
      */
     private long id;
     /*
-    *Attribute name 
+    *Atributo name 
      */
     private String name;
 

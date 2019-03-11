@@ -14,20 +14,20 @@ import co.edu.konrad.zoowebservice.entities.ShowRatingEntity;
 public class ShowRatingDTO {
 
     /*
-    *Primary Key id
+    *Llave primaria  id
      */
     private long id;
     /*
-     *Foreign Key id_show
+     *Llave Foranea id_show
      */
     private long idShow;
 
     /*
-    *Atribbut user_name 
+    *Atributo user_name 
      */
     private String userName;
     /*
-    *Atribbut value 
+    *Atributo value 
      */
     private long valueShowR;
 

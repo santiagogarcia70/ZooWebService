@@ -14,11 +14,11 @@ import co.edu.konrad.zoowebservice.entities.IdentificationTypeEntity;
 public class IdentificationTypeDTO {
 
     /*
-    *Primary Key "id"
+    *Llave primaria "id"
      */
     private long id;
     /*
-    *Attribute name 
+    *Atributo name 
      */
     private String name;
 
