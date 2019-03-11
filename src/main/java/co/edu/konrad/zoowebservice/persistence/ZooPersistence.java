@@ -14,7 +14,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 /**
- * Manejador de la tabla Carrito
+ * Manejador de la tabla Zoo
  * @author Valeria R.
  */
 

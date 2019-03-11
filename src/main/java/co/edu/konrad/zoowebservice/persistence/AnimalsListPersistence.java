@@ -13,7 +13,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 /**
- * Manejador de la tabla Carrito
+ * Manejador de la tabla AnimalsList
  * @author Valeria R.
  */
 
