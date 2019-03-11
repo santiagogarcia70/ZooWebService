@@ -3,48 +3,52 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.konrad.zoowebservice.entities;
+package co.edu.konrad.zoowebservice.DTO;
 
-import java.io.Serializable;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import co.edu.konrad.zoowebservice.entities.ZooEntity;
 
 /**
  *
  * @author valeria
  */
-@Entity
-public class ZooEntity implements Serializable{
+public class ZooDTO {
     
     /**
      * Llave primaria
      */
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id_zoo")
     private long idZoo;
     
     /**
      * Atributo nombre
      */
-    @Column(name = "name")
     private String name;
 
     /**
      * Atributo unico de telefono
      */
-    @Column(name = "phone", unique = true)
     private long phone;
 
     /**
      * Atributo unico de direccion
      */
-    @Column(name = "address", unique = true)
     private String address;
+    
+    
+    public ZooDTO(ZooEntity diet) {
+        this.idZoo = diet.getIdZoo();
+        this.name = diet.getName();
+        this.address = diet.getAddress();
+        this.phone = diet.getPhone();
+    }
 
+    public ZooEntity toEntity(){
+        ZooEntity zooEntity = new ZooEntity();
+        zooEntity.setIdZoo(this.idZoo);
+        zooEntity.setName(this.name);
+        zooEntity.setPhone(this.phone);
+        zooEntity.setAddress(this.address);
+        return zooEntity;
+    }
 
     public long getIdZoo() {
         return idZoo;
@@ -77,5 +81,8 @@ public class ZooEntity implements Serializable{
     public void setAddress(String address) {
         this.address = address;
     }
+    
+    
+    
     
 }
