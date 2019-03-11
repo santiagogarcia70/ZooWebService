@@ -6,12 +6,14 @@
 package co.edu.konrad.zoowebservice.entities;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -68,7 +70,12 @@ public class AnimalEntity implements Serializable {
     @Temporal (TemporalType.TIME)
     @Column (name = "lunchtime_animal")
     private String lunchTimeAnimal;
-
+    /**
+     * Atributo lista de animales
+     */
+    @ManyToMany
+    @JoinColumn(name = "animalshow_list")
+    private List<ShowEntity> animalShowList;
     public AnimalEntity() {
     }
 
@@ -135,4 +142,13 @@ public class AnimalEntity implements Serializable {
     public void setLunchTimeAnimal(String lunchTimeAnimal) {
         this.lunchTimeAnimal = lunchTimeAnimal;
     }
+
+    public List<ShowEntity> getAnimalShowList() {
+        return animalShowList;
+    }
+
+    public void setAnimalShowList(List<ShowEntity> animalShowList) {
+        this.animalShowList = animalShowList;
+    }
+    
 }
