@@ -66,7 +66,7 @@ public class ShowResource {
      * @return ShowDTO
      */
     @POST
-    public ShowDTO createAnimal(ShowDTO show) {
+    public ShowDTO createShow(ShowDTO show) {
         return new ShowDTO(showLogic.createShow(show.toEntity()));
     }
 
