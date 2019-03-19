@@ -5,19 +5,16 @@
  */
 package co.edu.konrad.zoowebservice.DTO;
 
-import co.edu.konrad.zoowebservice.entities.AnimalEntity;
 import co.edu.konrad.zoowebservice.entities.AppointmentEntity;
-import co.edu.konrad.zoowebservice.entities.ShowEntity;
 import co.edu.konrad.zoowebservice.entities.IdentificationTypeEntity;
 import co.edu.konrad.zoowebservice.entities.WorkerEntity;
-import java.io.Serializable;
 import java.util.Date;
 
 /**
  *
  * @author Alejandro
  */
-public class WorkerDTO implements Serializable {
+public class WorkerDTO {
 
     /**
      * Atributo identificador del trabajador

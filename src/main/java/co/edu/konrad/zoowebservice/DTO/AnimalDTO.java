@@ -9,14 +9,13 @@ import co.edu.konrad.zoowebservice.entities.AnimalEntity;
 import co.edu.konrad.zoowebservice.entities.ShowEntity;
 import co.edu.konrad.zoowebservice.entities.SpecieEntity;
 import co.edu.konrad.zoowebservice.entities.WorkerEntity;
-import java.io.Serializable;
 import java.util.List;
 
 /**
  *
  * @author Alejandro
  */
-public class AnimalDTO implements Serializable {
+public class AnimalDTO {
 
     /**
      * Atributo identificador del animal
