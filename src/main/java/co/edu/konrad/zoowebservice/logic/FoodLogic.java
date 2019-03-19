@@ -12,7 +12,7 @@ import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 /**
- *
+ * Clase para modelar la logica de negocio de Food
  * @author valeria
  */
 @Stateless
