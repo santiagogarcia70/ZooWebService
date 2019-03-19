@@ -28,6 +28,7 @@ public class AnimalsListPersistence {
     
     /**
      *  Metodo que permite traer todos los elementos de la tabla
+     * @return lista de AnimalsList
      */
     public List<AnimalsListEntity> findAll(){
         Query all  = em.createQuery("select p from AnimalsListEntity p");
@@ -36,6 +37,8 @@ public class AnimalsListPersistence {
     
     /**
      *  Metodo que permite encontrar un elemento por id de la tabla AnimalsList
+     * @param id
+     * @return AnimalsList
      */
     public AnimalsListEntity findById(long id){
         return em.find(AnimalsListEntity.class, id);
