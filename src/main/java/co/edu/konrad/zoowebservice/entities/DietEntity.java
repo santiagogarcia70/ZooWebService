@@ -9,6 +9,8 @@ package co.edu.konrad.zoowebservice.entities;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -19,11 +21,17 @@ import javax.persistence.ManyToOne;
  */
 @Entity
 public class DietEntity implements Serializable{
-    
     /**
-     * Llave foranea de especie
+     * llave primaria
      */
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id_diet")
+    private long idDiet;
+    
+    /**
+     * Atributo id especie
+     */
     @Column(name = "id_specie")
     private long idSpecie;
     
@@ -32,7 +40,7 @@ public class DietEntity implements Serializable{
      */
     @ManyToOne
     @JoinColumn(name = "id_food")
-    private long idFood;
+    private FoodEntity idFood;
     
     /**
      * Atributo cantidad de comida
@@ -49,11 +57,11 @@ public class DietEntity implements Serializable{
         this.idSpecie = idSpecie;
     }
 
-    public long getIdFood() {
+    public FoodEntity getIdFood() {
         return idFood;
     }
 
-    public void setIdFood(long idFood) {
+    public void setIdFood(FoodEntity idFood) {
         this.idFood = idFood;
     }
 
@@ -63,6 +71,14 @@ public class DietEntity implements Serializable{
 
     public void setFoodQuantity(long foodQuantity) {
         this.foodQuantity = foodQuantity;
+    }
+
+    public long getIdDiet() {
+        return idDiet;
+    }
+
+    public void setIdDiet(long idDiet) {
+        this.idDiet = idDiet;
     }
 
     

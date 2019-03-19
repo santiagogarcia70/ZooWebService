@@ -40,7 +40,7 @@ public class AnimalsListEntity implements Serializable{
     /**
      * Atributo locacion
      */
-    @Column(name = "locatioon")
+    @Column(name = "location")
     private String location;
 
 

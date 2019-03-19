@@ -6,13 +6,17 @@
 package co.edu.konrad.zoowebservice.DTO;
 
 import co.edu.konrad.zoowebservice.entities.DietEntity;
+import co.edu.konrad.zoowebservice.entities.FoodEntity;
 
 /**
  *
  * @author valeria
  */
 public class DietDTO {
-    
+     /**
+     * llave primaria
+     */
+    private long idDiet;
        
     /**
      * Llave foranea de especie
@@ -22,7 +26,7 @@ public class DietDTO {
     /**
      * Llave foranea de comida
      */
-    private long idFood;
+    private FoodEntity idFood;
     
     /**
      * Atributo cantidad de comida
@@ -30,6 +34,7 @@ public class DietDTO {
     private long foodQuantity;
 
      public DietDTO(DietEntity diet) {
+        this.idDiet = diet.getIdDiet();
         this.idFood = diet.getIdFood();
         this.idSpecie = diet.getIdSpecie();
         this.foodQuantity = diet.getFoodQuantity();
@@ -51,11 +56,11 @@ public class DietDTO {
         this.idSpecie = idSpecie;
     }
 
-    public long getIdFood() {
+    public FoodEntity getIdFood() {
         return idFood;
     }
 
-    public void setIdFood(long idFood) {
+    public void setIdFood(FoodEntity idFood) {
         this.idFood = idFood;
     }
 
